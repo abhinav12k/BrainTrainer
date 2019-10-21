@@ -1,6 +1,7 @@
 package com.example.braintrainer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button option3;
     Button option4;
     Button playAgain;
+    ConstraintLayout gameLayout;
 
     TextView result;
     TextView question;
@@ -82,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
     public void start(View view){
 
         goButton.setVisibility(View.INVISIBLE);
-
+        gameLayout.setVisibility(View.VISIBLE);
+        playAgain(findViewById(R.id.timer));
     }
 
     public  void playAgain(View view){
@@ -136,7 +139,10 @@ public class MainActivity extends AppCompatActivity {
         scoretextView = findViewById(R.id.scoretextView);
         timertextView = findViewById(R.id.timer);
         playAgain = findViewById(R.id.playAgainButton);
+        gameLayout=findViewById(R.id.gameLayout);
 
-        playAgain(findViewById(R.id.timer));
+        goButton.setVisibility(View.VISIBLE);
+        gameLayout.setVisibility(View.INVISIBLE);
+
     }
 }
